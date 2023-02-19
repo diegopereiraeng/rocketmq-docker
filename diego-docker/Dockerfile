@@ -1,7 +1,7 @@
 FROM openjdk:8-jre-alpine
 
 # Copie a pasta bin para o container
-COPY ./distribution/target/bin /rocketmq
+COPY ./distribution/bin /rocketmq
 
 # Extrair o RocketMQ
 #RUN tar -xzf /rocketmq.tar.gz -C /
