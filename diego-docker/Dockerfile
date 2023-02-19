@@ -1,13 +1,13 @@
 FROM openjdk:8-jre-alpine
 
-# Copie o arquivo namesrv.jar para o container
-COPY ./distribution/target/apache-rocketmq-*-bin.tar.gz /rocketmq.tar.gz
+# Copie a pasta bin para o container
+COPY ./distribution/target/bin /rocketmq
 
 # Extrair o RocketMQ
-RUN tar -xzf /rocketmq.tar.gz -C /
+#RUN tar -xzf /rocketmq.tar.gz -C /
 
 # Configurar nomesrv
-RUN mv /apache-rocketmq-*-bin /rocketmq
+#RUN mv /apache-rocketmq-*-bin /rocketmq
 RUN chmod +x /rocketmq/bin/mqnamesrv
 RUN echo "rocketmq.namesrv.addr=127.0.0.1:9876" > /rocketmq/conf/broker.conf
 
