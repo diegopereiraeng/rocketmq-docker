@@ -4,9 +4,9 @@ FROM openjdk:8-jre-alpine
 RUN apk add --no-cache bash
 
 # Copy the Kafka distribution archive and extract it
-COPY ./core/build/distributions/kafka_2.13-2.8.0.tgz /tmp
-RUN tar -xzf /tmp/kafka_2.13-2.8.0.tgz -C /opt
-RUN mv /opt/kafka_2.13-2.8.0 /opt/kafka
+COPY ./core/build/distributions/kafka_2.13-3.4.0-SNAPSHOT.tgz /tmp
+RUN tar -xzf /tmp/kafka_2.13-3.4.0-SNAPSHOT.tgz -C /opt
+RUN mv /opt/kafka_2.13-3.4.0-SNAPSHOT /opt/kafka
 
 # Expose the Kafka and ZooKeeper ports
 EXPOSE 9092 2181
